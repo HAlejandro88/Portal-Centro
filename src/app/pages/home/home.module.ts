@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ComponentsModule } from 'src/app/components/components.module';
+
 
 import { HomePage } from './home.page';
 
@@ -10,6 +12,7 @@ import { HomePage } from './home.page';
   imports: [
     CommonModule,
     FormsModule,
+    ComponentsModule,
     IonicModule,
     RouterModule.forChild([
       {

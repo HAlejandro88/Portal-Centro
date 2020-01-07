@@ -1,0 +1,17 @@
+[
+    {
+        "icon":"home",
+        "name": "Principal",
+        "redirectTo": "/home"
+    },
+    {
+        "icon":"information-circle",
+        "name": "Servicio a Cliente",
+        "redirectTo": "/servicio-clientes"
+    },
+    {
+        "icon":"information-circle",
+        "name": "Servicio a Cliente",
+        "redirectTo": "/servicio-clientes"
+    }
+]

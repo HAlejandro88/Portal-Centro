@@ -1,0 +1,31 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>
+      Portal Centro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="principal">
+    <ion-card>
+      <ion-img src="./assets/iniciodesesion-02 (1).png"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>Acceso a Clientes</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" #user></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" #pass></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-button (click)="Iniciar()" expand="full">
+      Entrar
+    </ion-button>
+  </div> 
+</ion-content>

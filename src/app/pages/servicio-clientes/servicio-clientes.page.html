@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary" menu="primerMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-capitalize>Servicio a Clientes</ion-title>
+    <ion-buttons slot="end">
+    <ion-label>{{hoy}}</ion-label>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item color="secondary">
+      <ion-label>Criterios de Busqueda</ion-label>
+    </ion-item>
+    <ion-card-content>
+      <form (ngSubmit)="BuscarServicio()" #servicio>
+        <ion-item>
+          <ion-label position="floating">Numero de Permiso CRE:</ion-label>
+          <ion-input type="text" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Razon Social:</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label (click)="showPiker()">Clasificación</ion-label>
+        <ion-label color="primary" >{{clasificacion}}</ion-label>
+        </ion-item>
+        <br>
+        <ion-button expand="block" color="medium">
+          Buscar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
