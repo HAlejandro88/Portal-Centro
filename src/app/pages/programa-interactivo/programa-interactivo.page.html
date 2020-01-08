@@ -12,6 +12,7 @@
 <ion-content>
   <ion-grid fixed>
     <ion-row>
+
       <ion-col  size="12" sizeMd="6" sizeLg="6"><br><br><br>
         <ion-button  fill="clear">
           Pizarrón de avisos
@@ -22,6 +23,9 @@
   </ion-grid>
 
   <ion-card>
+
+    <ion-card-header color="light"></ion-card-header><br>
+
     <ion-card-content>
       <ion-buttons slot="start">
         <ion-button (click)="selectCliente()">
@@ -34,6 +38,53 @@
         </ion-button>
       </ion-buttons><br><br>
       <div class="ion-text-center">
+
+        <form >
+          <ion-label>Fecha de embarque</ion-label>
+          <ion-datetime display-format="DD.MM.YYYY " placeholder="DD.MM.YYYY " [(ngModel)]="fechaE" name="fechaE"></ion-datetime>
+            <ion-label>Punto de entrega: </ion-label>
+            <ion-label placeholder="Click para seleccionar">{{framework3}}</ion-label>
+            <ion-button (click)="picker3()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+            <ion-label>Distribucion: </ion-label>
+            <ion-label placeholder="Click para seleccionar">{{framework4}}</ion-label>
+            <ion-button (click)="picker4()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+            <ion-label>Centro de entrega: </ion-label>
+            <ion-label placeholder="Click para seleccionar">{{framework}}</ion-label>
+            <ion-button (click)="picker()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+            <ion-label>Medio de transporte: </ion-label>
+            <ion-label placeholder="Click para seleccionar">{{framework2}}</ion-label>
+            <ion-button (click)="picker2()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+            <ion-label>Estado: </ion-label>
+            <ion-label placeholder="Click para seleccionar">{{frameworkEstado}}</ion-label>
+            <ion-button (click)="pickerEstado()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+            <a href="" style="color: black;"><u>Como utilizar el programa de entrega interactivo</u></a>
+        </form>
+      </div> <br>
+      <ion-button (click)="genera_tabla()">
+        tabla
+      </ion-button>
+      <div >
+        <table style="width:100%;" id="wraped">
+          <tbody>
+            <tr>
+              <th>Folio</th>
+              <th>Producto</th>
+              <th>Presentacion</th>
+              <th>Destino</th>
+              <th>Fecha programada</th>
+              <th>Turno</th>
+              <th>Vehiculo</th>
+              <th>Toneladas</th>
+              <th>Capacidad</th>
+              <th>Cambio de vehiculo</th>
+              <th>Entrega</th>
+              <th>Programado</th>
+              <th>Estado</th>
+              <th>Mensaje</th>
+            </tr>
+          </tbody>
+        </table>
+
         <ion-label>Fecha de embarque</ion-label>
         <ion-datetime display-format="DD.MM.YYYY " placeholder="DD.MM.YYYY "></ion-datetime>
           <ion-label>Punto de entrega: </ion-label>
@@ -52,7 +103,9 @@
           <ion-label placeholder="Click para seleccionar">{{producto}}</ion-label>
           <ion-button (click)="productoG()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
           <a href="" style="color: black;"><u>Como utilizar el programa de entrega interactivo</u></a>
+
       </div>
+
     </ion-card-content>
   </ion-card>
 </ion-content>
