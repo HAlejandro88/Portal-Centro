@@ -3,7 +3,6 @@ import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import { PickerController, NavController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
-import { IonInput, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-servicio-clientes',
@@ -39,7 +38,7 @@ export class ServicioClientesPage implements OnInit {
   }
 
   goInformativo(){
-    this.NavCtrl.navigateForward('/servicio-informativo')
+    this.navCtrl.navigateForward('/servicio-informativo')
   }
 
   async showPiker() {

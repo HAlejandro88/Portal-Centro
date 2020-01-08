@@ -28,7 +28,7 @@ const routes: Routes = [
 
     path: 'servicio-informativo',
     loadChildren: () => import('./pages/servicio-informativo/servicio-informativo.module').then( m => m.ServicioInformativoPageModule)
-  }
+  },
   {
     path: 'programa-interactivo',
     loadChildren: () => import('./pages/programa-interactivo/programa-interactivo.module').then( m => m.ProgramaInteractivoPageModule)
