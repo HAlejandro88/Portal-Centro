@@ -238,8 +238,10 @@ export class ProgramaInteractivoPage implements OnInit {
   
   genera_tabla(){
     this.contador ++;
+    var table: HTMLTableElement = <HTMLTableElement> document.getElementById("wraped");
+    var row = table.insertRow(-1).innerHTML=`<td>${this.contador}</td><td>${this.producto}</td><td>M3.</td><td>${this.framework3}</td><td>${this.fechaE}</td><td>turno</td><td>PMX20000</td><td>1</td><td>20,000</td><td>${this.framework2}</td><td>${this.framework}</td><td>ESTIMADO</td><td>${this.frameworkEstado}</td><td>EL EMBARQUE SOBREPASA EL LIMITE DE LA TERMINAL</td>`;
     console.log(this.contador);   
-    document.getElementById("wraped").insertRow(-1).innerHTML=`<td>${this.contador}</td><td>${this.producto}</td><td>M3.</td><td>${this.framework3}</td><td>${this.fechaE}</td><td>turno</td><td>PMX20000</td><td>1</td><td>20,000</td><td>${this.framework2}</td><td>${this.framework}</td><td>ESTIMADO</td><td>${this.frameworkEstado}</td><td>EL EMBARQUE SOBREPASA EL LIMITE DE LA TERMINAL</td>`
+    //document.getElementById("wraped").insertRow(-1).innerHTML=`<td>${this.contador}</td><td>${this.producto}</td><td>M3.</td><td>${this.framework3}</td><td>${this.fechaE}</td><td>turno</td><td>PMX20000</td><td>1</td><td>20,000</td><td>${this.framework2}</td><td>${this.framework}</td><td>ESTIMADO</td><td>${this.frameworkEstado}</td><td>EL EMBARQUE SOBREPASA EL LIMITE DE LA TERMINAL</td>`
     
   }
 }
