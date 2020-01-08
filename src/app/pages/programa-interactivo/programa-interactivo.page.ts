@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PickerController } from '@ionic/angular';
+import { PickerController, ToastController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
 @Component({
   selector: 'app-programa-interactivo',
@@ -19,7 +19,7 @@ export class ProgramaInteractivoPage implements OnInit {
   framework3='';
   framework4='';
   
-  constructor( private pickerCtrl: PickerController) { }
+  constructor( private pickerCtrl: PickerController, private toastCtrl: ToastController) { }
 
   ngOnInit() {
   }
@@ -136,6 +136,22 @@ export class ProgramaInteractivoPage implements OnInit {
       let col = await picker.getColumn('framework4');
       this.framework4 =  col.options[ col.selectedIndex].text;
     });
+  }
+
+  async selectCliente() {
+    const toast = await this.toastCtrl.create({
+      message: 'Cliente Seleccionado',
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  async selectProgramaIn() {
+    const toast = await this.toastCtrl.create({
+      message: 'Programa Seleccionado',
+      duration: 2000
+    });
+    toast.present();
   }
 
 
