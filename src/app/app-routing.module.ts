@@ -23,7 +23,11 @@ const routes: Routes = [
   {
     path: 'turbocina',
     loadChildren: () => import('./pages/turbocina/turbocina.module').then( m => m.TurbocinaPageModule)
+  },  {
+    path: 'programa-interactivo',
+    loadChildren: () => import('./pages/programa-interactivo/programa-interactivo.module').then( m => m.ProgramaInteractivoPageModule)
   },
+
 ];
 
 @NgModule({
