@@ -3,6 +3,7 @@ import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import { PickerController, NavController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
+import { IonInput, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-servicio-clientes',
@@ -22,7 +23,8 @@ export class ServicioClientesPage implements OnInit {
   permisos: any[] = [];
   textoBuscar = '';
 
-  constructor(private pickerCtrl: PickerController, private dataService: DataService, private NavCtrl: NavController) { }
+
+  constructor(private pickerCtrl: PickerController, private dataService: DataService,private navCtrl: NavController) { }
 
   ngOnInit() {
     this.dataService.getEstaciones().subscribe(data => {
@@ -73,4 +75,8 @@ export class ServicioClientesPage implements OnInit {
       this.clasificacion = col.options[col.selectedIndex].text;
     })
   }
+  portal(){
+    this.navCtrl.navigateForward('/programa-interactivo');
+    }
+   
 }
