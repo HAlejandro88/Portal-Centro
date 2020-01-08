@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PickerController } from '@ionic/angular';
+import { PickerOptions } from '@ionic/core';
 
 @Component({
   selector: 'app-servicio-informativo',
@@ -13,7 +15,38 @@ export class ServicioInformativoPage implements OnInit {
 
   hoy = `${this.dia}/Enero/${this.year}`;
 
-  constructor() { }
+  turno = '';
+
+  constructor(private pickerCtrl: PickerController) { }
+
+  async mostrarPicker() {
+    let opts: PickerOptions = {
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        },
+        {
+          text: 'Listo'
+        }
+      ],
+      columns: [
+        {
+          name: 'turno',
+          options:[
+            { text: 'Turno 1', value: 'A' },
+            { text: 'Turno 2', value: 'B' },
+          ]
+        }
+      ]
+    };
+    let picker = await this.pickerCtrl.create(opts);
+    picker.present();
+    picker.onDidDismiss().then( async data => {
+      let col = await picker.getColumn('turno');
+      this.turno = col.options[col.selectedIndex].text;
+    });
+  }
 
   ngOnInit() {
   }
