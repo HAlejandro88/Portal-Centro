@@ -57,6 +57,9 @@
             <ion-label>Estado: </ion-label>
             <ion-label placeholder="Click para seleccionar">{{frameworkEstado}}</ion-label>
             <ion-button (click)="pickerEstado()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+            <ion-label>Producto: </ion-label>
+          <ion-label placeholder="Click para seleccionar">{{producto}}</ion-label>
+          <ion-button (click)="productoG()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
             <a href="" style="color: black;"><u>Como utilizar el programa de entrega interactivo</u></a>
         </form>
       </div> <br>
@@ -84,26 +87,6 @@
             </tr>
           </tbody>
         </table>
-
-        <ion-label>Fecha de embarque</ion-label>
-        <ion-datetime display-format="DD.MM.YYYY " placeholder="DD.MM.YYYY "></ion-datetime>
-          <ion-label>Punto de entrega: </ion-label>
-          <ion-label placeholder="Click para seleccionar">{{framework3}}</ion-label>
-          <ion-button (click)="picker3()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
-          <ion-label>Distribucion: </ion-label>
-          <ion-label placeholder="Click para seleccionar">{{framework4}}</ion-label>
-          <ion-button (click)="picker4()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
-          <ion-label>Centro de entrega: </ion-label>
-          <ion-label placeholder="Click para seleccionar">{{framework}}</ion-label>
-          <ion-button (click)="picker()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
-          <ion-label>Medio de transporte: </ion-label>
-          <ion-label placeholder="Click para seleccionar">{{framework2}}</ion-label>
-          <ion-button (click)="picker2()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
-          <ion-label>Producto: </ion-label>
-          <ion-label placeholder="Click para seleccionar">{{producto}}</ion-label>
-          <ion-button (click)="productoG()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
-          <a href="" style="color: black;"><u>Como utilizar el programa de entrega interactivo</u></a>
-
       </div>
 
     </ion-card-content>

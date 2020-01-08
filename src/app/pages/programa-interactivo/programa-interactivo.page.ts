@@ -167,7 +167,19 @@ export class ProgramaInteractivoPage implements OnInit {
           options:[
             {text:'Cancelado',value:'Cancelado'},
             {text:'Pendiente',value:'Pendiente'},
-            {text:'Activo',value:'Activo'},
+            {text:'Activo',value:'Activo'}
+          ]
+        }
+      ]
+    }
+    let picker = await this.pickerCtrl.create(Opts);
+    picker.present();
+    picker.onDidDismiss().then(async data=>{
+      let col = await picker.getColumn('frameworkEstado');
+      this.frameworkEstado =  col.options[ col.selectedIndex].text;
+      console.log(this.frameworkEstado); 
+    });
+  }
 
   async selectCliente() {
     const toast = await this.toastCtrl.create({
@@ -212,23 +224,6 @@ export class ProgramaInteractivoPage implements OnInit {
         }
       ]
     };
-
-    let picker = await this.pickerCtrl.create(Opts);
-    picker.present();
-    picker.onDidDismiss().then(async data=>{
-      let col = await picker.getColumn('frameworkEstado');
-      this.frameworkEstado =  col.options[ col.selectedIndex].text;
-      console.log(this.frameworkEstado); 
-    });
-  }
-  
-  genera_tabla(){
-    this.contador ++;
-    console.log(this.contador);   
-    document.getElementById("wraped").insertRow(-1).innerHTML=`<td>${this.contador}</td><td>producto</td><td>M3.</td><td>${this.framework3}</td><td>${this.fechaE}</td><td>turno</td><td>PMX20000</td><td>1</td><td>20,000</td><td>${this.framework2}</td><td>${this.framework}</td><td>ESTIMADO</td><td>${this.frameworkEstado}</td><td>EL EMBARQUE SOBREPASA EL LIMITE DE LA TERMINAL</td>`
-    
-  }
-}
     let picker = await this.pickerCtrl.create(opts);
     picker.present();
     picker.onDidDismiss().then(async data => {
@@ -238,6 +233,18 @@ export class ProgramaInteractivoPage implements OnInit {
     })
   }
 
-
+    
+  
+  
+  genera_tabla(){
+    this.contador ++;
+    console.log(this.contador);   
+    document.getElementById("wraped").insertRow(-1).innerHTML=`<td>${this.contador}</td><td>producto</td><td>M3.</td><td>${this.framework3}</td><td>${this.fechaE}</td><td>turno</td><td>PMX20000</td><td>1</td><td>20,000</td><td>${this.framework2}</td><td>${this.framework}</td><td>ESTIMADO</td><td>${this.frameworkEstado}</td><td>EL EMBARQUE SOBREPASA EL LIMITE DE LA TERMINAL</td>`
+    
+  }
 }
+    
+
+
+
 
