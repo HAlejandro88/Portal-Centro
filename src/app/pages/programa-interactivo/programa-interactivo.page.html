@@ -1,23 +1,19 @@
 <ion-header no-border>
-  <ion-buttons slot="start">
-    <ion-back-button defaultHref="/servicio-clientes"></ion-back-button>
-  </ion-buttons>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary" menu="primerMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+     Programa Interactivo
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid fixed>
     <ion-row>
-      <ion-col  size="12" sizeMd="6" sizeLg="6">
-      </ion-col>
+
       <ion-col  size="12" sizeMd="6" sizeLg="6"><br><br><br>
-        <ion-button  fill="clear">
-          Inicio
-        </ion-button>
-        <ion-button  fill="clear">
-          Comunicados
-        </ion-button>
         <ion-button  fill="clear">
           Pizarrón de avisos
         </ion-button>
@@ -27,23 +23,22 @@
   </ion-grid>
 
   <ion-card>
+
     <ion-card-header color="light"></ion-card-header><br>
+
     <ion-card-content>
       <ion-buttons slot="start">
-        <ion-button (click)="onClick()">
-          <ion-icon name="arrow-dropright"></ion-icon>
-          Inicio
-        </ion-button>
-        <ion-button (click)="onClick()">
+        <ion-button (click)="selectCliente()">
           <ion-icon name="arrow-dropright"></ion-icon>
           Selecciona un cliente
         </ion-button>
-        <ion-button (click)="onClick()">
+        <ion-button (click)="selectProgramaIn()">
           <ion-icon name="arrow-dropright"></ion-icon>
           Programas de clientes interactivos
         </ion-button>
       </ion-buttons><br><br>
       <div class="ion-text-center">
+
         <form >
           <ion-label>Fecha de embarque</ion-label>
           <ion-datetime display-format="DD.MM.YYYY " placeholder="DD.MM.YYYY " [(ngModel)]="fechaE" name="fechaE"></ion-datetime>
@@ -89,6 +84,26 @@
             </tr>
           </tbody>
         </table>
+
+        <ion-label>Fecha de embarque</ion-label>
+        <ion-datetime display-format="DD.MM.YYYY " placeholder="DD.MM.YYYY "></ion-datetime>
+          <ion-label>Punto de entrega: </ion-label>
+          <ion-label placeholder="Click para seleccionar">{{framework3}}</ion-label>
+          <ion-button (click)="picker3()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+          <ion-label>Distribucion: </ion-label>
+          <ion-label placeholder="Click para seleccionar">{{framework4}}</ion-label>
+          <ion-button (click)="picker4()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+          <ion-label>Centro de entrega: </ion-label>
+          <ion-label placeholder="Click para seleccionar">{{framework}}</ion-label>
+          <ion-button (click)="picker()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+          <ion-label>Medio de transporte: </ion-label>
+          <ion-label placeholder="Click para seleccionar">{{framework2}}</ion-label>
+          <ion-button (click)="picker2()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+          <ion-label>Producto: </ion-label>
+          <ion-label placeholder="Click para seleccionar">{{producto}}</ion-label>
+          <ion-button (click)="productoG()"  fill="clear"><ion-icon name="arrow-dropdown"></ion-icon></ion-button><br>
+          <a href="" style="color: black;"><u>Como utilizar el programa de entrega interactivo</u></a>
+
       </div>
 
     </ion-card-content>
