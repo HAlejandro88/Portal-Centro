@@ -1,6 +1,8 @@
+import { DataService } from './../../services/data.service';
 import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import { PickerController } from '@ionic/angular';
+import { PickerOptions } from '@ionic/core';
 
 @Component({
   selector: 'app-servicio-clientes',
@@ -15,17 +17,27 @@ export class ServicioClientesPage implements OnInit {
 
   hoy = `${this.dia}/Enero/${this.year}`;
 
-  clasificacion: '';
+  clasificacion = '';
 
-  constructor(private pickerCtrl: PickerController) { }
+  permisos: any[] = [];
+  textoBuscar = '';
+
+  constructor(private pickerCtrl: PickerController, private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getEstaciones().subscribe(data => {
+      console.log(data);
+      this.permisos = data;
+    })
   }
 
-  BuscarServicio() {}
+  BuscarPermiso(event) {
+    console.log(event);
+    this.textoBuscar = event.detail.value;
+  }
 
   async showPiker() {
-    let opts: PickerController = {
+    let opts: PickerOptions = {
       buttons: [
         {
           text: 'Cancelar',

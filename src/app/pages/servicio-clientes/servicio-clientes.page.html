@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button color="primary" menu="primerMenu"></ion-menu-button>
     </ion-buttons>
-    <ion-title text-capitalize>Servicio a Clientes</ion-title>
+    <ion-title class="ion-text-capitalize">Servicio a Clientes</ion-title>
     <ion-buttons slot="end">
     <ion-label>{{hoy}}</ion-label>
     </ion-buttons>
@@ -16,10 +16,10 @@
       <ion-label>Criterios de Busqueda</ion-label>
     </ion-item>
     <ion-card-content>
-      <form (ngSubmit)="BuscarServicio()" #servicio>
+      <form  #servicio>
         <ion-item>
           <ion-label position="floating">Numero de Permiso CRE:</ion-label>
-          <ion-input type="text" ></ion-input>
+          <ion-input type="text" (ionChange)="BuscarPermiso($event)"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Razon Social:</ion-label>
@@ -36,4 +36,19 @@
       </form>
     </ion-card-content>
   </ion-card>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col *ngFor="let permiso of permisos | date: textoBuscar"  
+               size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+        <ion-card >
+          <ion-item color="warning">
+            <ion-label>{{permiso.address}}</ion-label>
+          </ion-item>
+          <ion-card-header>
+            <ion-card-subtitle>{{permiso.name}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
