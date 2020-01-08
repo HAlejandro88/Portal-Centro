@@ -1,3 +1,4 @@
+import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import { PickerController, ToastController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
@@ -18,6 +19,7 @@ export class ProgramaInteractivoPage implements OnInit {
   framework2 ='';
   framework3='';
   framework4='';
+  producto = '';
   
   constructor( private pickerCtrl: PickerController, private toastCtrl: ToastController) { }
 
@@ -152,6 +154,41 @@ export class ProgramaInteractivoPage implements OnInit {
       duration: 2000
     });
     toast.present();
+  }
+
+  async productoG() {
+    let opts: PickerOptions = {
+      buttons:[
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        },
+        {
+          text: 'OK'
+        }
+      ],
+      columns: [
+        {
+          name:'producto',
+          options:[
+            {text:'Gasolina 87 Octanos',value:'87'},
+            {text:'Gasolina 91 Octanos',value:'91'},
+            {text:'Diésel',value:'disel'},
+            {text:' Diésel UBA',value:'diseluba'},
+            {text:'Turbocina Jet A',value:'jetA'},
+            {text:'Turbocina Jet A1',value:'jetA1'},
+            {text:'Gas Avión',value:'gasavion'}
+          ]
+        }
+      ]
+    };
+    let picker = await this.pickerCtrl.create(opts);
+    picker.present();
+    picker.onDidDismiss().then(async data => {
+      let col = await picker.getColumn('producto');
+      console.log('col',col);
+      this.producto = col.options[col.selectedIndex].text;
+    })
   }
 
 
