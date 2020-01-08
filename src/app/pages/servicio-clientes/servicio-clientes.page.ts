@@ -1,7 +1,7 @@
 import { DataService } from './../../services/data.service';
 import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
-import { PickerController } from '@ionic/angular';
+import { PickerController, NavController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
 
 @Component({
@@ -22,7 +22,7 @@ export class ServicioClientesPage implements OnInit {
   permisos: any[] = [];
   textoBuscar = '';
 
-  constructor(private pickerCtrl: PickerController, private dataService: DataService) { }
+  constructor(private pickerCtrl: PickerController, private dataService: DataService, private NavCtrl: NavController) { }
 
   ngOnInit() {
     this.dataService.getEstaciones().subscribe(data => {
@@ -34,6 +34,10 @@ export class ServicioClientesPage implements OnInit {
   BuscarPermiso(event) {
     console.log(event);
     this.textoBuscar = event.detail.value;
+  }
+
+  goInformativo(){
+    this.NavCtrl.navigateForward('/servicio-informativo')
   }
 
   async showPiker() {
