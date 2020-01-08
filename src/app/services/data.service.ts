@@ -14,8 +14,5 @@ export class DataService {
     return this.http.get<Componente[]>('/assets/data/menu.json');
   }
 
-  getEstaciones() {
-    return this.http.get<any>('/assets/data/estaciones.json');
-  }
 
 }
