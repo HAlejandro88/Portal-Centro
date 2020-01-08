@@ -1,39 +1,18 @@
 <ion-header no-border>
-  <ion-buttons slot="start">
-    <ion-back-button defaultHref="/servicio-clientes"></ion-back-button>
-  </ion-buttons>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary" menu="primerMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+     Programa Interactivo
+    </ion-title>
   </ion-toolbar>
-  <!-- <ion-row>
-    <ion-col size="12">
-      <img src="../../../assets/LogoH.png" alt="" style="width: 25%; margin: 0px 10%;">
-      <ion-button (click)="onClick()" class="ion-margin" fill="clear">
-        Inicio &nbsp;&nbsp; <hr style="background-color: black; height: 20px; width: 2px;">
-      </ion-button>
-      <ion-button (click)="onClick()" class="ion-margin" fill="clear">
-        Comunicados &nbsp;&nbsp;<hr style="background-color: black; height: 250px; width: 2px;">
-      </ion-button>
-      <ion-button (click)="onClick()" class="ion-margin" fill="clear">
-        Pizarrón de avisos &nbsp;&nbsp;<hr style="background-color: blue; height: 50px; width: 2px;">
-      </ion-button>
-      <ion-label style="color: red;">{{hoy}}</ion-label>
-    </ion-col>
-  </ion-row> -->
 </ion-header>
 
 <ion-content>
   <ion-grid fixed>
     <ion-row>
-      <ion-col  size="12" sizeMd="6" sizeLg="6">
-        <ion-img src="assets/LogoH.png" style="width: 50%;"></ion-img>
-      </ion-col>
       <ion-col  size="12" sizeMd="6" sizeLg="6"><br><br><br>
-        <ion-button  fill="clear">
-          Inicio
-        </ion-button>
-        <ion-button  fill="clear">
-          Comunicados
-        </ion-button>
         <ion-button  fill="clear">
           Pizarrón de avisos
         </ion-button>
@@ -43,28 +22,13 @@
   </ion-grid>
 
   <ion-card>
-    <ion-card-header color="light">
-      <ion-button (click)="onClick()" fill="clear">
-        Consulta General 
-      </ion-button>
-      <ion-button (click)="onClick()" fill="clear">
-        Servicio a Clientes
-      </ion-button>
-      <ion-button (click)="onClick()" fill="clear">
-        Salir
-      </ion-button>
-    </ion-card-header><br>
     <ion-card-content>
       <ion-buttons slot="start">
-        <ion-button (click)="onClick()">
-          <ion-icon name="arrow-dropright"></ion-icon>
-          Inicio
-        </ion-button>
-        <ion-button (click)="onClick()">
+        <ion-button (click)="selectCliente()">
           <ion-icon name="arrow-dropright"></ion-icon>
           Selecciona un cliente
         </ion-button>
-        <ion-button (click)="onClick()">
+        <ion-button (click)="selectProgramaIn()">
           <ion-icon name="arrow-dropright"></ion-icon>
           Programas de clientes interactivos
         </ion-button>
