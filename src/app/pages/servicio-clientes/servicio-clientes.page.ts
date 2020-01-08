@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { PickerController, NavController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
 
-
 @Component({
   selector: 'app-servicio-clientes',
   templateUrl: './servicio-clientes.page.html',
@@ -36,8 +35,7 @@ export class ServicioClientesPage implements OnInit {
     this.textoBuscar = event.detail.value;
   }
 
-  goInformativo(){
-  
+  goInformativo(){  
     if (this.permiso === "PL/658/EXP/ES/2015" || this.razonSocial === 'ESTACION DE SERVICIO CALAFIA, S.A. DE C.V.') {
       this.navCtrl.navigateForward('/servicio-informativo')
     }
@@ -488,6 +486,7 @@ export class ServicioClientesPage implements OnInit {
    else {
      
    }
+
   }
 
   async showPiker() {
