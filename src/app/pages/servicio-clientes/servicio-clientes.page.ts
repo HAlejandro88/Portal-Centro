@@ -1,7 +1,7 @@
 import { DataService } from './../../services/data.service';
 import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
-import { PickerController, NavController } from '@ionic/angular';
+import { PickerController, NavController, AlertController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
 
 @Component({
@@ -25,7 +25,7 @@ export class ServicioClientesPage implements OnInit {
   textoBuscar = '';
 
 
-  constructor(private pickerCtrl: PickerController, private navCtrl: NavController) { }
+  constructor(private pickerCtrl: PickerController, private navCtrl: NavController,private alertController:AlertController) { }
 
   ngOnInit() {
   }
@@ -481,12 +481,48 @@ export class ServicioClientesPage implements OnInit {
       this.navCtrl.navigateForward('/servicio-informativo')
   }
    else if (this.permiso === "PL/690/EXP/ES/2064" || this.razonSocial === "PETROMAX, S.A. DE C.V."){
-      this.navCtrl.navigateForward('/servicio-informativo')
+      this.alertaEntrante();
    }
    else {
-     
+     this.noExiste();
    }
 
+  }
+
+  async alertaEntrante() {
+    const alert = await this.alertController.create({
+      header: 'Alerta',
+      subHeader: '',
+      message: `tu Busqueda fue ${this.permiso} o ${this.razonSocial} `,
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Okay',
+          handler: () => {
+            this.navCtrl.navigateForward('/servicio-informativo');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async noExiste() {
+    const alert = await this.alertController.create({
+      header: 'Alerta',
+      subHeader: 'Warning',
+      message: 'No fue encontrado el Permiso o razon Social',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
   async showPiker() {
