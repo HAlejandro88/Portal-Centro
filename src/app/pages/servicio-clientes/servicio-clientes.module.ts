@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ServicioClientesPageRoutingModule } from './servicio-clientes-routing.module';
 
 import { ServicioClientesPage } from './servicio-clientes.page';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    PipesModule,
     ServicioClientesPageRoutingModule
   ],
   declarations: [ServicioClientesPage]

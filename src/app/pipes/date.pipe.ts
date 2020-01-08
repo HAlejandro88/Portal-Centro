@@ -5,8 +5,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DatePipe implements PipeTransform {
 
-  transform(value: any, ...args: any[]): any {
-    return null;
+  transform(arreglo: any[], texto: string, columna): any[] {
+    if (texto === '') {
+      return arreglo
+    }
+
+    texto = texto.toLocaleLowerCase();
+
+    return arreglo.filter(item =>{
+      return item.title.toLowerCase().includes(texto)
+    })
+    
   }
 
 }

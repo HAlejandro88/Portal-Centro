@@ -10,8 +10,18 @@
         "redirectTo": "/servicio-clientes"
     },
     {
-        "icon":"information-circle",
-        "name": "Servicio a Cliente",
-        "redirectTo": "/servicio-clientes"
+        "icon":"hand",
+        "name": "Consulta en General",
+        "redirectTo": "/home"
+    },
+    {
+        "icon": "paper",
+        "name": "Especificaciones de Producto",
+        "redirectTo": "/especificaciones"
+    },
+    {
+        "icon": "log-out",
+        "name": "Salir",
+        "redirectTo": "/home"
     }
 ]

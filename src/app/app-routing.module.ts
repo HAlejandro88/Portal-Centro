@@ -12,6 +12,18 @@ const routes: Routes = [
     path: 'opciones-consultar',
     loadChildren: () => import('./pages/opciones-consultar/opciones-consultar.module').then( m => m.OpcionesConsultarPageModule)
   },
+  {
+    path: 'especificaciones',
+    loadChildren: () => import('./pages/especificaciones/especificaciones.module').then( m => m.EspecificacionesPageModule)
+  },
+  {
+    path: 'gasavion',
+    loadChildren: () => import('./pages/gasavion/gasavion.module').then( m => m.GasavionPageModule)
+  },
+  {
+    path: 'turbocina',
+    loadChildren: () => import('./pages/turbocina/turbocina.module').then( m => m.TurbocinaPageModule)
+  },
 ];
 
 @NgModule({
